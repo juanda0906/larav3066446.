@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Result;
 
 class OperacionesController extends Controller
 {
@@ -36,8 +37,8 @@ class OperacionesController extends Controller
             $x1=(-$b+$raiz)/(2*$a);
             $x2=(-$b-$raiz)/(2*$a);
 
-            echo "x1 es: $x1 <br> ";
-            echo "x2 es: $x2";
+            // echo "x1 es: $x1 <br> ";
+            // echo "x2 es: $x2";
 
           }
           else{
@@ -45,6 +46,18 @@ class OperacionesController extends Controller
             echo "Ingrese otros valores...";
 
           }
+
+          $resul = new Result();
+
+          $resul->a=$request->a;
+          $resul->b=$request->b;
+          $resul->c=$request->c;
+          $resul->x1=$x1;
+          $resul->x2=$x2;
+          $resul->Save();
+          return $resul;
+
+
     }
 
 
