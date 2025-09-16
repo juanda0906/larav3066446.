@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
+            $table->string('title',45);
+            $table->text('biografia');
+            $table->string('website',45);
             //Atributos foraneos
             $table->unsignedBigInteger('user_id')->nullable();
             //referenciando la tabla users

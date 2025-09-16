@@ -4,10 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SaludoController;
 use App\Http\Controllers\OperacionesController;
+use App\Http\Controllers\OrmController;
 
 
-
-
+Route::get('consultaOrm', [OrmController::class, 'consulta']);
 Route::get('saludo', [SaludoController::class, 'saludar']);
 
 Route::get('suma/{num1}/{num2}', [OperacionesController::class, 'sumar']);
