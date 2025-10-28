@@ -1,13 +1,7 @@
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+@section('content')
 
-<body>
     <h1>Crear Curso</h1>
 
     <form action="{{ route('curso.store') }}" method="POST" enctype="multipart/form-data">
@@ -35,6 +29,6 @@
         <button type="submit">Registrar Curso</button>
     </form>
 
-</body>
 
-</html>
+@endsection
+
